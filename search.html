@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <form action="testsearch.php">
+    <select name="month" class="btn btn-outline-success dropdown-toggle" style="height: 50px;width:200px;">
+        <option value=""selected disabled hidden>เดือน</option>
+          <option value="มกราคม">มกราคม</option>
+          <option value="กุมภาพันธ์">กุมภาพันธ์</option>
+          <option value="มีนาคม">มีนาคม</option>
+          <option value="เมษายน">เมษายน</option>
+          <option value="พฤษภาคม">พฤษภาคม</option>
+          <option value="มิถุนายน">มิถุนายน</option>
+          <option value="กรกฏาคม">กรกฏาคม</option>
+          <option value="สิงหาคม">สิงหาคม</option>
+          <option value="กันยายน">กันยายน</option>
+          <option value="ตุลาคม">ตุลาคม</option>
+          <option value="พฤศจิกายน">พฤศจิกายน</option>
+          <option value="ธันวาคม">ธันวาคม</option>
+    </select>
+    <input type="submit" >
+</form>
+</body>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script>
+var firebaseConfig = {
+  apiKey: "AIzaSyCDzq1KoPC7IFbb_Xr_0QE_fuddrTHN_uw",
+  authDomain: "testmotorcycle.firebaseapp.com",
+  databaseURL: "https://testmotorcycle.firebaseio.com",
+  projectId: "testmotorcycle",
+  storageBucket: "testmotorcycle.appspot.com",
+  messagingSenderId: "1030185236616",
+  appId: "1:1030185236616:web:70685b35d6a6b4142b073d"
+};
+firebase.initializeApp(firebaseConfig);
+   
+</script>
+</html>

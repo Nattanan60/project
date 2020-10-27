@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>หน้าหลัก</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+</head>
+<body style="background-color: #cde8f3;">
+<div class="jumbotron text-center" style="background-color: #4198b9;height: 180px;">
+  <h1 style="color: aliceblue;">หน้าหลัก</h1>
+  <p style="color: rgb(33, 68, 99);">ระบบบริหารการจัดการจอดรถมอเตอร์ไซค์อัจฉริยะกรณีศึกษาที่จอดรถมอเตอร์ไซค์มหาวิทยาลัยพะเยา</p> 
+</div><center>
+<div class="container pt-3">
+  <div class="row">
+    <div class="col-sm-4"style="background-color: #D9B0CD;height: 340px; ">
+      <br>
+      <div class="" style="background-color:  #F9ACC0;height: 140px;">
+        <form action="datainsearch.php">
+          <button type="submit" class="btn btn-outline-light text-dark ;" style= "height: 140px;width: 350px;"><h3>ตรวจสอบ วัน-เวลารถเข้าทั้งหมด</h3></button></form>
+          </div>         
+<br>
+        <div class="" style="background-color:  #F9ACC0;height: 140px;">
+          <form action="dataoutsearch.php">
+          <button type="submit" class="btn btn-outline-light text-dark ;" style= "height: 140px;width: 350px;"><h3>ตรวจสอบ วัน-เวลารถออกทั้งหมด</h3></button></form>
+        </div></form>
+    </div>
+
+    <div class="col-sm-4"style="background-color: #E7D2EF;height: 340px;">
+      <br>
+      <form action="searchlock.php">
+      <div class="" style="background-color: #91cfc9;height: 140px;">
+        <button type="submit" class="btn btn-outline-secondary " style= "height: 140px;width: 350px;"><h3>ตรวจสอบ จำนวนรถในแถว</h3></button></form>
+      </div>
+      <br>
+        <div class="" style="background-color: #91cfc9;height: 140px;">
+          <form action="realtime.php">
+          <button type="submit" class="btn btn-outline-secondary " style= "height: 140px;width: 350px;"><h3>ตรวจสอบ จำนวนรถในลานจอดรถ</h3></button></form>
+        </div></form>
+    </div>
+
+    <div class="col-sm-4"style="background-color: #AAD4E0;height: 340px;">
+      <br>
+      <div class="" style="background-color: #E2D0DC;height: 140px; ">
+        <form action="qr1.php">
+          <button type="submit" class="btn btn-outline-primary btn-block; "style=" height: 140px;width: 350px;"><h3>QR CODE IN</h3></button></form>
+        </div>
+        <br>
+        <div class="" style="background-color: #E2D0DC;height: 140px;">
+          <form action="qrout1.php">
+            <button type="submit" class="btn btn-outline-primary ;" style=" height: 140px;width: 350px;" ><h3>QR CODE OUT</h3></button></form>
+            </div>
+    </div>
+    
+  </div>
+</div>  
+</script>
+ </center>  
+</body>
+</html>

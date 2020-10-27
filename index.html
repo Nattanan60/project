@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+    <head>
+        <title>Login to Admin</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      </head>
+      <body>
+         <div class="mdl-layout mdl-js-layout">
+            <main class="mdl-layout__content">
+              <div class="page-content" style="padding-top: 60px;" align="center">
+              <!-- Your content goes here -->
+              <h1>Admin</h1>
+              <form>
+              <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+                <tbody>
+                  <tr>
+                    <td class="bg-success"><i class="glyphicon glyphicon-envelope"></i>Email</td>
+                    <td>
+                      
+                      <div class="mdl-textfield mdl-js-textfield">
+                        
+                        <input class="mdl-textfield__input" type="email" id="email">
+                        <label class="mdl-textfield__label" for="email">.......Email......</label>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="bg-danger">Password</td>
+                    <td>
+                      <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="password" id="password">
+                        <label class="mdl-textfield__label" for="password">........Password........</label>
+                        <span class="mdl-textfield__error"></span>
+                      </div>
+                    </td>
+                  </tr>
+                  
+                 
+                  <tr>
+                    <td class="mdl-data-table__cell--non-numeric">
+                        Console:
+                    </td>
+                    <td >
+                      <div class="panel panel-danger" id ="errors" style='display: none;'>       
+                      </div>
+                      <div class="panel panel-primary" id ="success" style='display: none;'>
+                      </div>
+                      <div class="col-xs-2"></div>
+                      <div class="row"></div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <button id="sign-in" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                Submit
+              </button>
+              </form>
+              </div>
+            </main>
+          </div>
+       
+      
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyCDzq1KoPC7IFbb_Xr_0QE_fuddrTHN_uw",
+      authDomain: "testmotorcycle.firebaseapp.com",
+      databaseURL: "https://testmotorcycle.firebaseio.com",
+      projectId: "testmotorcycle",
+      storageBucket: "testmotorcycle.appspot.com",
+      messagingSenderId: "1030185236616",
+      appId: "1:1030185236616:web:70685b35d6a6b4142b073d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    document.getElementById("sign-in").onclick = function(e) {
+    e.preventDefault();
+    handleSignUp();
+  }
+ 
+  document.getElementById("sign-in").onclick = function(e) {
+    e.preventDefault();
+    handleSignUp();
+  }
+ 
+  function handleSignUp() {
+    var errors = document.getElementById('errors');
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
+    var warnings = "";
+ 
+    if (email.length < 4) {
+      warnings += 'You need a valid email chief <br/>';
+    }
+    if (password.length < 4) {
+      warnings += 'You need a valid password boss <br/>';
+    }
+ 
+    if (warnings != "") {
+      console.log(warnings);
+      errors.style.display = 'block';
+      errors.innerHTML = warnings;
+    } else {
+      errors.style.display = "none";
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        errors.style.display = (errors.style.display === "none" || errors.style.display === "") ? "block" : "none";
+        console.log(error);
+        errors.innerHTML = error + "<br/>";
+      });
+    }
+  }
+ 
+  // Once a user is created with the email/login
+  // Notify when he/she is logged in
+  firebase.auth().onAuthStateChanged(user => {  
+    if (user) {
+      var fireBase_name = user.displayName;
+      var fireBase_email = user.email;
+      var fireBase_emailVerified = user.emailVerified;
+      var fireBase_uid = user.uid;
+      var success = document.getElementById('success');
+      success.style.display = (success.style.display === "none" || success.style.display === "") ? "block" : "none";
+      success.innerHTML = "User Logged in with Credentials: <br />" +
+        "<b>Name:</b> " + fireBase_name + "<br />" + 
+        "<b>Email: </b>" + fireBase_email + "<br />" + 
+        "<b>emailVerified: </b>" + fireBase_emailVerified + "<br />" + 
+        "<b>uid: </b>" + fireBase_uid + "<br />";
+        window.location.href = "main.html";
+    } 
+  });
+ 
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+  }, function(error) {
+    // An error happened.
+  });
+  </script>
+</body>
+</html>
