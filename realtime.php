@@ -122,7 +122,8 @@
     querySnapshot.forEach(function(doc) {
       array = [doc.id]
       count.push(Number)
-      console.log(array);
+      console.log(count);
+
     });
     db.collection("Parking").get().then(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
@@ -131,7 +132,7 @@
         A3=(doc.data().A3);
         A4=(doc.data().A4);
         A5=(doc.data().A5);
-console.log(A2);
+
       })
   
 

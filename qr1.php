@@ -43,7 +43,7 @@ db.collection("ganeQR").doc("1").set(data1);
 setTimeout(function(){
     window.location.href = "test.php";  
   
-}, 1000);
+}, 3000);
  
 </script>
 </body>

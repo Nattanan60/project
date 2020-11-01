@@ -6,6 +6,23 @@ form.addEventListener('submit', (e) => {
     console.log('เข้า');
 
 });
+$(document).ready(function () {
+    $("#license").hide();
+    $("#lock").show();
+    $('#checklock').click(function () {
+        if ($(this).is(":checked")) {
+            $("#lock").show();
+            $("#license").hide();
+
+        }
+    });
+    $('#checklicense').click(function () {
+        if ($(this).is(":checked")) {
+            $("#license").show();
+            $("#lock").hide();
+        }
+    });
+});
 
 function showdata(doc, day, month, year, Time) {
     var row = table.insertRow(-1);

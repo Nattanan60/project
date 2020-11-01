@@ -30,7 +30,7 @@
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
 var data1 ='';
-db.collection("camera4.1")
+db.collection("camera4.2")
 .onSnapshot(function(querySnapshot){
   querySnapshot.forEach(function(doc){
     doc.data().License.porvince
@@ -43,7 +43,7 @@ db.collection("ganeQRout").doc("1").set(data1);
 setTimeout(function(){
     window.location.href = "test1.php";  
   
-}, 1000);
+}, 3000);
  
 </script>
 </body>
